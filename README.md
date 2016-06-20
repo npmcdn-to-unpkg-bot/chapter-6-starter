@@ -1,2 +1,1 @@
-# Chapter 5 Starter Files
-# chapter-6-starter
+# Chapter 6 Starter Files
