@@ -23,12 +23,3 @@ export class ContactsComponent {
       .then(contacts => this.contacts = contacts);
   }
 }
-
-@Component({
-  template: `test`
-})
-export class Contactsz {
-  constructor() {
-    console.log('ldsf');
-  }
-}
