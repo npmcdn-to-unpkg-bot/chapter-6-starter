@@ -1,51 +1,35 @@
 import { Component } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { Contact } from './shared';
 import { ContactListComponent } from './contact-list/contact-list.component';
+import { ContactService } from './shared/services/contact.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'fa-contacts-app',
+  selector: 'ca-contacts',
   templateUrl: 'contacts.component.html',
   styleUrls: ['contacts.component.css'],
-  directives: [ContactListComponent]
+  directives: [ContactListComponent],
+  providers: [ContactService]
 })
-export class ContactsAppComponent {
+export class ContactsComponent {
   title: string = 'Contacts';
   contacts: Contact[] = [];
 
-  constructor() {}
+  constructor(private contactService: ContactService) {}
 
   ngOnInit() {
-    this.contacts = this.contacts = [
-      { 
-        name: 'Adrian Directive',
-        email: 'adrian.directive@example.com', 
-        number: '7035550123',
-        country: 'us',
-        favorite: true 
-      },
-      {
-        name: 'Rusty Component',
-        email: 'rusty.component@example.com', 
-        number: '4415550122', 
-        country: 'bm',
-        favorite: false
-      },
-      { 
-        name: 'Jeff Pipe',
-        email: 'jeff.pipe@example.com',
-        number: '7145550111',
-        country: 'us',
-        favorite: true
-      },
-      {
-        name: 'Craig Service',
-        email: 'craig.services@example.com',
-        number: '5145550132',
-        country: 'ca',
-        favorite: false 
-      }
-    ];
+    this.contactService.getContacts()
+      .then(contacts => this.contacts = contacts);
+  }
+}
+
+@Component({
+  template: `test`
+})
+export class Contactsz {
+  constructor() {
+    console.log('ldsf');
   }
 }

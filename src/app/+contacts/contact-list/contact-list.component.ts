@@ -25,7 +25,7 @@ export class ContactListComponent {
   }
 
   private addContacts() {
-    this.contacts = this.contacts = [
+    this.contacts = [
       { 
         name: 'Adrian Directive',
         email: 'adrian.directive@example.com', 
