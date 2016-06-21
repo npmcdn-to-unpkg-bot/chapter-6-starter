@@ -14,7 +14,6 @@ import { ContactService } from './shared/services/contact.service';
   providers: [ContactService]
 })
 export class ContactsComponent {
-  title: string = 'Contacts';
   contacts: Contact[] = [];
 
   constructor(private contactService: ContactService) {}
