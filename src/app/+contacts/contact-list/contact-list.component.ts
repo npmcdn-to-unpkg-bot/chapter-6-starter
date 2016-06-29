@@ -21,6 +21,10 @@ export class ContactListComponent {
 
   constructor(private contactService: ContactService) {}
 
+  ngOnInit() {
+    this.addContacts();
+  }
+
   @Input('contacts') contacts: Contact[];
 
   public deleteContacts() {

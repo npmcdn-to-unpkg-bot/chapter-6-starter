@@ -14,10 +14,5 @@ import { ContactListComponent } from './contact-list';
 export class ContactsComponent {
   contacts: Contact[] = [];
 
-  constructor(private contactService: ContactService) {}
-
-  ngOnInit() {
-    this.contactService.getContacts()
-      .then(contacts => this.contacts = contacts);
-  }
+  constructor() {}
 }
