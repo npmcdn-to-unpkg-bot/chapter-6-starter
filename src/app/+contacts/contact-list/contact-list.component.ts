@@ -1,11 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
-import { 
+import {
   Contact,
   ContactService,
   FavoriteIconDirective,
   PhoneNumberPipe,
-  ShowContactsDirective 
+  ShowContactsDirective
 } from '../shared';
 
 @Component({
@@ -16,7 +16,7 @@ import {
   directives: [FavoriteIconDirective, ShowContactsDirective],
   pipes: [PhoneNumberPipe]
 })
-export class ContactListComponent {
+export class ContactListComponent implements OnInit {
   public noContactsMessage: string = 'You do not have any contacts yet';
 
   constructor(private contactService: ContactService) {}
