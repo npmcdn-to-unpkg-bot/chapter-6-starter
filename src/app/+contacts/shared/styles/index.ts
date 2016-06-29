@@ -1,1 +1,1 @@
-export { Styles } from './styles';
+export { styles } from './styles';

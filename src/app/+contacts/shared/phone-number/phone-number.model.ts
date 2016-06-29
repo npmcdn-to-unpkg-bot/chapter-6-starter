@@ -6,10 +6,10 @@ export class PhoneNumber {
   private prefix: string;
   private suffix: string;
 
-  constructor(num) {
-    this.areaCode = this.getAreaCode(num);
-    this.prefix = this.getPrefixCode(num);
-    this.suffix = this.getSuffixCode(num);
+  constructor(phoneNumber: string) {
+    this.areaCode = this.getAreaCode(phoneNumber);
+    this.prefix = this.getPrefixCode(phoneNumber);
+    this.suffix = this.getSuffixCode(phoneNumber);
   }
 
   private getAreaCode(phoneNumber: string): string {
