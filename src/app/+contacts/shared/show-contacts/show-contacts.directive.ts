@@ -7,7 +7,7 @@ export class ShowContactsDirective {
   private templateRef: TemplateRef<any>;
   private viewContainer: ViewContainerRef;
 
-  constructor(templateRef: TemplateRef<any>, viewContainer: ViewContainerRef) { 
+  constructor(templateRef: TemplateRef<any>, viewContainer: ViewContainerRef) {
     this.templateRef = templateRef;
     this.viewContainer = viewContainer;
   }

@@ -1,15 +1,15 @@
-import { CountryDialingCodes } from './country-dialing-codes';
-import { PhoneNumberErrorMessages } from './phone-number-error-messages';
+import { countryDialingCodes } from './country-dialing-codes';
+import { phoneNumberErrorMessages } from './phone-number-error-messages';
 
 export class PhoneNumber {
   private areaCode: string;
   private prefix: string;
   private suffix: string;
 
-  constructor(number) {
-    this.areaCode = this.getAreaCode(number);
-    this.prefix = this.getPrefixCode(number);
-    this.suffix = this.getSuffixCode(number);
+  constructor(num) {
+    this.areaCode = this.getAreaCode(num);
+    this.prefix = this.getPrefixCode(num);
+    this.suffix = this.getSuffixCode(num);
   }
 
   private getAreaCode(phoneNumber: string): string {
@@ -37,20 +37,20 @@ export class PhoneNumber {
   }
 
   private getInternationCountryCodeStr(countryCode: string): string {
-    countryCode = countryCode.toLowerCase();
-    let countryDialingCode: string = '';
+    countryCode = countryCode.toUpperCase();
+    let countryDialingCode = '';
 
-    if (CountryDialingCodes[countryCode]) {
-      countryDialingCode = `+${ CountryDialingCodes[countryCode] }`;
+    if (countryDialingCodes[countryCode]) {
+      countryDialingCode = `+${ countryDialingCodes[countryCode] }`;
     } else {
-      console.warn(PhoneNumberErrorMessages.INVALID_COUNTRY_CODE_WARN);
+      console.warn(phoneNumberErrorMessages.INVALID_COUNTRY_CODE_WARN);
     }
 
     return countryDialingCode;
   }
 
-  private getFormattedPhoneNumberStr(format: string = 'default', countryCode?: string): string {
-    let formattedPhoneNumber: string = '';
+  private getFormattedPhoneNumberStr(format = 'default', countryCode?: string): string {
+    let formattedPhoneNumber = '';
 
     switch (format.toLowerCase()) {
       case 'default':
@@ -63,16 +63,16 @@ export class PhoneNumber {
         formattedPhoneNumber = this.getHyphensFormattedPhoneNumber();
         break;
       default:
-        console.warn(PhoneNumberErrorMessages.INVALID_FORMAT_WARN);
+        console.warn(phoneNumberErrorMessages.INVALID_FORMAT_WARN);
         formattedPhoneNumber = this.getDefaultFormattedPhoneNumber();
     }
-   
+
     return formattedPhoneNumber;
   }
 
-  public getFormattedPhoneNumber(format: string = 'default', countryCode?: string): string {
-    let formattedPhoneNumber: string = this.getFormattedPhoneNumberStr(format);
-    let internationalCountryCodeStr: string = '';
+  public getFormattedPhoneNumber(format = 'default', countryCode?: string): string {
+    let formattedPhoneNumber = this.getFormattedPhoneNumberStr(format);
+    let internationalCountryCodeStr = '';
 
     if (countryCode && format) {
       internationalCountryCodeStr = this.getInternationCountryCodeStr(countryCode);

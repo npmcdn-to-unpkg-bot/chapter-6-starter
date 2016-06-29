@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { Contact } from './shared';
 import { ContactListComponent } from './contact-list/contact-list.component';

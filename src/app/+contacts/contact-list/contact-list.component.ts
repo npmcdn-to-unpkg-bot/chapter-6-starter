@@ -15,18 +15,18 @@ import { ContactService } from '../shared/services/contact.service';
   pipes: [PhoneNumberPipe]
 })
 export class ContactListComponent {
-  private noContactsMessage: string = 'You do not have any contacts yet';
+  public noContactsMessage: string = 'You do not have any contacts yet';
 
   constructor(private contactService: ContactService) {}
 
   @Input('contacts') contacts: Contact[];
 
-  private deleteContacts() {
+  public deleteContacts() {
     this.contacts = [];
   }
 
-  private addContacts() {
-     this.contactService.getContacts()
+  public addContacts() {
+    this.contactService.getContacts()
       .then(contacts => this.contacts = contacts);
   }
 }
