@@ -4,6 +4,7 @@ import { Contact } from '../shared/models/contact.model';
 import { FavoriteIconDirective } from '../shared/favorite-icon/favorite-icon.directive';
 import { ShowContactsDirective } from '../shared/show-contacts/show-contacts.directive';
 import { PhoneNumberPipe } from '../shared/phone-number/phone-number.pipe';
+import { ContactService } from '../shared/services/contact.service';
 
 @Component({
   moduleId: module.id,
@@ -16,7 +17,7 @@ import { PhoneNumberPipe } from '../shared/phone-number/phone-number.pipe';
 export class ContactListComponent {
   private noContactsMessage: string = 'You do not have any contacts yet';
 
-  constructor() {}
+  constructor(private contactService: ContactService) {}
 
   @Input('contacts') contacts: Contact[];
 
@@ -25,35 +26,7 @@ export class ContactListComponent {
   }
 
   private addContacts() {
-    this.contacts = [
-      { 
-        name: 'Adrian Directive',
-        email: 'adrian.directive@example.com', 
-        number: '7035550123',
-        country: 'us',
-        favorite: true 
-      },
-      {
-        name: 'Rusty Component',
-        email: 'rusty.component@example.com', 
-        number: '4155550122', 
-        country: 'us',
-        favorite: false
-      },
-      { 
-        name: 'Jeff Pipe',
-        email: 'jeff.pipe@example.com',
-        number: '7145550111',
-        country: 'uk',
-        favorite: true
-      },
-      {
-        name: 'Craig Service',
-        email: 'craig.services@example.com',
-        number: '6505550132',
-        country: 'uk',
-        favorite: false 
-      }
-    ];
+     this.contactService.getContacts()
+      .then(contacts => this.contacts = contacts);
   }
 }
