@@ -1,1 +1,1 @@
-export { FavoriteIconDirective } from './favorite-icon.directive';
+export * from './favorite-icon.directive';

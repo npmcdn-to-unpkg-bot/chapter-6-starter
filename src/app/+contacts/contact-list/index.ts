@@ -1,1 +1,1 @@
-export { ContactListComponent } from './contact-list.component';
+export * from './contact-list.component';

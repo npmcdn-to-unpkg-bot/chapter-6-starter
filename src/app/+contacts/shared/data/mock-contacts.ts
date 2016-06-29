@@ -1,4 +1,4 @@
-import { Contact } from '../models/contact.model';
+import { Contact } from '../';
 
 export var CONTACTS: Contact[] = [
   {

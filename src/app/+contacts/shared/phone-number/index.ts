@@ -1,1 +1,1 @@
-export { PhoneNumberPipe } from './phone-number.pipe';
+export * from './phone-number.pipe';

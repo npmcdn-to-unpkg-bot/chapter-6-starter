@@ -1,1 +1,1 @@
-export { CONTACTS } from './mock-contacts';
+export * from './mock-contacts';

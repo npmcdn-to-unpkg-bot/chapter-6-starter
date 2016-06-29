@@ -1,10 +1,12 @@
 import { Component, Input } from '@angular/core';
 
-import { Contact } from '../shared/models/contact.model';
-import { FavoriteIconDirective } from '../shared/favorite-icon/favorite-icon.directive';
-import { ShowContactsDirective } from '../shared/show-contacts/show-contacts.directive';
-import { PhoneNumberPipe } from '../shared/phone-number/phone-number.pipe';
-import { ContactService } from '../shared/services/contact.service';
+import { 
+  Contact,
+  ContactService,
+  FavoriteIconDirective,
+  PhoneNumberPipe,
+  ShowContactsDirective 
+} from '../shared';
 
 @Component({
   moduleId: module.id,

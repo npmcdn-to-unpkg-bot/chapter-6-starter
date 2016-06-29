@@ -3,8 +3,8 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Contact } from '../models/contact.model';
-import { CONTACTS } from '../data/mock-contacts';
+import { Contact } from '../';
+import { CONTACTS } from '../';
 
 @Injectable()
 export class ContactService {

@@ -1,7 +1,7 @@
-export { CONTACTS } from './data/mock-contacts';
-export { FavoriteIconDirective } from './favorite-icon/favorite-icon.directive';
-export { Contact } from './models/contact.model';
-export { PhoneNumberPipe } from './phone-number/phone-number.pipe';
-export { ContactService } from './services/contact.service';
-export { ShowContactsDirective } from './show-contacts/show-contacts.directive';
-export { styles } from './styles/styles';
+export * from './data/mock-contacts';
+export * from './favorite-icon/favorite-icon.directive';
+export * from './models/contact.model';
+export * from './phone-number/phone-number.pipe';
+export * from './services/contact.service';
+export * from './show-contacts/show-contacts.directive';
+export * from './styles/styles';

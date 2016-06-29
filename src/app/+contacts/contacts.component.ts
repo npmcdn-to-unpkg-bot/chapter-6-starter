@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 
-import { Contact } from './shared';
-import { ContactListComponent } from './contact-list/contact-list.component';
-import { ContactService } from './shared/services/contact.service';
+import { Contact, ContactService } from './shared';
+import { ContactListComponent } from './contact-list';
 
 @Component({
   moduleId: module.id,

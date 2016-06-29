@@ -1,1 +1,1 @@
-export { ShowContactsDirective } from './show-contacts.directive';
+export * from './show-contacts.directive';

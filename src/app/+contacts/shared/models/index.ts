@@ -1,1 +1,1 @@
-export { Contact } from './contact.model';
+export * from './contact.model';

@@ -1,6 +1,6 @@
 import { Directive, ElementRef, Input, HostListener } from '@angular/core';
 
-import { styles } from '../styles/styles';
+import { styles } from '../';
 
 @Directive({
   selector: '[caFavoriteIcon]'

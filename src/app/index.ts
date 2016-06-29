@@ -1,4 +1,4 @@
-export { environment } from './environment';
-export { ContactsComponent } from './+contacts/contacts.component';
-export { AppComponent } from './app.component';
-export { APP_ROUTER_PROVIDERS } from './app.routes';
+export * from './environment';
+export * from './+contacts/contacts.component';
+export * from './app.component';
+export * from './app.routes';
