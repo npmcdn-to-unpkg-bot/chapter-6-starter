@@ -36,10 +36,10 @@ export class ContactListComponent implements OnInit {
 
   public addContacts() {
     this.isLoading = true;
-    this.contactService.getContactsSlowly()
+    this.contactService.getContacts()
       .then(contacts => {
         this.isLoading = false;
-        this.contacts = contacts
+        this.contacts = contacts;
       });
   }
 }
