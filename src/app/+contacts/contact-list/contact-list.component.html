@@ -26,8 +26,12 @@
     class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Delete Contacts</button>
 </div>
 
-<div *caShowContacts="!contacts.length">
-  <h6 class="noContactsMsg">{{ noContactsMessage }}</h6>
+<div *caShowContacts="!contacts.length && !isLoading">
+  <h6 class="messages">{{ noContactsMessage }}</h6>
   <button (click)="addContacts()"
     class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Add Contacts</button>
+</div>
+
+<div *caShowContacts="!contacts.length && isLoading">
+  <h6 class="messages">{{ loadingMessage }}</h6>
 </div>

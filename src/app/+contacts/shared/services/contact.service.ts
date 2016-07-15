@@ -20,6 +20,11 @@ export class ContactService {
     return Promise.resolve(CONTACTS);
   }
 
+  public getContactsSlowly(): Promise<Contact[]> {
+    return new Promise<Contact[]>(resolve =>
+      setTimeout(() => resolve(CONTACTS), 2000));
+  }
+
   public getContact() {
 
   }

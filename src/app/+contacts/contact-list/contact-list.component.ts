@@ -14,10 +14,13 @@ import {
   templateUrl: 'contact-list.component.html',
   styleUrls: ['contact-list.component.css'],
   directives: [FavoriteIconDirective, ShowContactsDirective],
-  pipes: [PhoneNumberPipe]
+  pipes: [PhoneNumberPipe],
+  providers: [ContactService]
 })
 export class ContactListComponent implements OnInit {
   public noContactsMessage: string = 'You do not have any contacts yet';
+  public loadingMessage: string = 'Loading contacts...';
+  public isLoading: boolean = true;
 
   constructor(private contactService: ContactService) {}
 
@@ -32,7 +35,11 @@ export class ContactListComponent implements OnInit {
   }
 
   public addContacts() {
-    this.contactService.getContacts()
-      .then(contacts => this.contacts = contacts);
+    this.isLoading = true;
+    this.contactService.getContactsSlowly()
+      .then(contacts => {
+        this.isLoading = false;
+        this.contacts = contacts
+      });
   }
 }
