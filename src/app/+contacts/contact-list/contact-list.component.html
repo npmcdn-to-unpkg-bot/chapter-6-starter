@@ -22,14 +22,12 @@
     </tbody>
   </table>
   <br>
-  <button (click)="deleteContacts()"
-    class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Delete Contacts</button>
+  <button (click)="deleteContacts()" md-raised-button color="primary">Delete All Contacts</button>
 </div>
 
 <div *caShowContacts="!contacts.length && !isLoading">
   <h6 class="messages">{{ noContactsMessage }}</h6>
-  <button (click)="addContacts()"
-    class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Add Contacts</button>
+  <button (click)="addContacts()" md-raised-button color="primary">Add Contacts</button>
 </div>
 
 <div *caShowContacts="!contacts.length && isLoading">

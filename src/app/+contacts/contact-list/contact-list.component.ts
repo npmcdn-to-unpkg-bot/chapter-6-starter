@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { MD_ICON_DIRECTIVES, MdIconRegistry } from '@angular2-material/icon';
 
 import {
   Contact,
@@ -13,9 +15,9 @@ import {
   selector: 'ca-contact-list',
   templateUrl: 'contact-list.component.html',
   styleUrls: ['contact-list.component.css'],
-  directives: [FavoriteIconDirective, ShowContactsDirective],
+  directives: [FavoriteIconDirective, ShowContactsDirective, MD_BUTTON_DIRECTIVES, MD_ICON_DIRECTIVES],
   pipes: [PhoneNumberPipe],
-  providers: [ContactService]
+  providers: [ContactService, MdIconRegistry]
 })
 export class ContactListComponent implements OnInit {
   public noContactsMessage: string = 'You do not have any contacts yet';
