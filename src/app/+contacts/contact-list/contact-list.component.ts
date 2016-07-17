@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MD_PROGRESS_BAR_DIRECTIVES } from '@angular2-material/progress-bar';
 import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 import { MD_ICON_DIRECTIVES, MdIconRegistry } from '@angular2-material/icon';
 
@@ -15,7 +16,8 @@ import {
   selector: 'ca-contact-list',
   templateUrl: 'contact-list.component.html',
   styleUrls: ['contact-list.component.css'],
-  directives: [FavoriteIconDirective, ShowContactsDirective, MD_BUTTON_DIRECTIVES, MD_ICON_DIRECTIVES],
+  directives: [FavoriteIconDirective, ShowContactsDirective, MD_PROGRESS_BAR_DIRECTIVES, 
+    MD_BUTTON_DIRECTIVES, MD_ICON_DIRECTIVES],
   pipes: [PhoneNumberPipe],
   providers: [ContactService, MdIconRegistry]
 })

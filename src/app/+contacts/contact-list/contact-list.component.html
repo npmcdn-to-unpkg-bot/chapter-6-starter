@@ -32,4 +32,6 @@
 
 <div *caShowContacts="!contacts.length && isLoading">
   <h6 class="messages">{{ loadingMessage }}</h6>
+  <md-progress-bar class="app-progress" mode="indeterminate" 
+    aria-label="Indeterminate progress-bar example"></md-progress-bar>
 </div>
