@@ -8,10 +8,15 @@ import { CONTACTS } from '../';
 
 @Injectable()
 export class ContactService {
+  private contactsUrl = 'app/contacts';
+
   constructor(private http: Http) { }
 
   public getContacts(): Promise<Contact[]> {
-    return Promise.resolve(CONTACTS);
+    return this.http.get(this.contactsUrl)
+               .toPromise()
+               .then(response => response.json().data)
+               .catch(this.handleError);
   }
 
   public getContactsSlowly(): Promise<Contact[]> {
